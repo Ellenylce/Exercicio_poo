@@ -1,6 +1,7 @@
 <?php
 // 1. ------- CONTA BANCÁRIA -----
 
+
 //Class (Molde para objetos)
 class ContaBancaria {
     public $titular;
@@ -152,10 +153,54 @@ class Calculadora {
     }
 
     public static function subtrair($num1, $num2){
-        return $num1 - $num2."<br>";
+        return $num1 - $num2."<br><br>";
     }
 }
 
 echo Calculadora::somar(2,2);
 echo calculadora::subtrair(3,2);
+
+//5. ------ Crie uma interface chamada TransportInterface com os seguintes métodos ------
+// andar()
+// parar()
+// Implemente essa interface em uma classe chamada Carro e em uma classe chamada Bicicleta. Cada implementação deve exibir uma mensagem apropriada para o método correspondente.
+
+interface TransportInterface{
+    public function andar();
+    public function parar ();
+}
+
+class Carro1 implements TransportInterface {
+    public function andar(){
+        echo "o carro está andando<br>";
+    }
+
+    public function parar(){
+        echo "O carro está parado<br>";
+    }
+
+}
+
+class Bicicleta implements TransportInterface{
+    public function andar(){
+        echo "A bicicleta está sendo pedalada<br>";
+    }
+
+    public function parar(){
+        echo "A bicicleta está parada<br>";
+    }
+} 
+
+$Carro1 = new Carro1();
+$Carro1->andar();
+$Carro1 ->parar();
+
+$Bicicleta = new Bicicleta();
+$Bicicleta->andar();
+$Bicicleta->parar();
+
 ?>
+
+
+
+
